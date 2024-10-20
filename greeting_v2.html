@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greeting_v2</title>
+	<style>
+		#greeting {color: green;}
+	</style>
+	<script>
+		var name = "";
+		
+		function greet() {
+			do {
+				name = prompt("Please type your name and press the OK button: ");
+			} while(name == "");
+			
+			document.getElementById("greeting").innerHTML = "Hello " + name + "!";
+			document.getElementById("greeting").addEventListener("click", invokeGreetingAlert, false);
+		}
+		
+		function invokeGreetingAlert() {
+			alert("Nice to meet you, " + name + "!");
+		}
+		
+		function invokeThankingAlert() {
+			alert(name + ", thank you for clicking!");
+		}
+	</script>
+</head>
+<body onload="greet();">
+	<p style="font-size: 32">
+		<h1 id="greeting"></h1>
+		<a href="#" onclick="invokeThankingAlert(); return false;">Click on me!</a>
+	</p>
+</body>
+</html>
